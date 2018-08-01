@@ -1,4 +1,4 @@
-package de.seven.fate.simpletexteditorserver;
+package de.seven.fate.texteditor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

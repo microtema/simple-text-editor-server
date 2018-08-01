@@ -9,7 +9,7 @@ Data Model
 
 * TextFileEntity
      * id: Long 
-     * name: String (Unique)
+     * fileName: String (Unique)
      * size: Long
      * content: Text
      * creationDate: Date
