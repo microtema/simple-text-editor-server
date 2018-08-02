@@ -6,7 +6,6 @@ import de.seven.fate.texteditor.exception.NoSuchEntityException;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.NoRepositoryBean;
 
 import java.io.Serializable;
@@ -25,7 +24,7 @@ import static org.apache.commons.lang3.Validate.notNull;
  * @param <I> generic type for id
  */
 @NoRepositoryBean
-public interface ExtendedCrudRepository<T extends BaseEntity<I>, I extends Serializable> extends JpaRepository<T, I>, CrudRepository<T, I>, JpaSpecificationExecutor<T> {
+public interface ExtendedCrudRepository<T extends BaseEntity<I>, I extends Serializable> extends JpaRepository<T, I>, JpaSpecificationExecutor<T> {
 
     /**
      * @param entity may not be null
