@@ -3,6 +3,7 @@ package de.seven.fate.texteditor.vo;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 
 /**
  * Value Object
@@ -19,5 +20,9 @@ public class TextFile {
     @NotNull
     private String content;
 
-    private Long size;
+    private String size;
+
+    private Date createdDate;
+
+    private Date lastModifiedDate;
 }

@@ -29,11 +29,11 @@ public class TextFileEntity2TextFileConverterTest {
 
         TextFile model = sut.convert(entity);
 
-        assertNotNull(entity);
+        assertNotNull(model);
 
         assertEquals(entity.getFileName(), model.getFileName());
         assertEquals(entity.getContent(), model.getContent());
-        assertEquals(entity.getSize(), model.getSize());
+        assertEquals("0 bytes", model.getSize());
     }
 
     @Test

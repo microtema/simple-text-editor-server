@@ -47,6 +47,8 @@ public class DefaultTextFileService implements TextFileService {
 
         Validate.isTrue(!textFileRepository.exists(textFileEntity), DUPLICATE_ENTITY, textFile.getFileName());
 
+        Validate.isTrue(!existsTextFile(textFile.getFileName()), DUPLICATE_ENTITY, textFile.getFileName());
+
         log.debug(() -> "Create new Text File: " + textFile.getFileName());
 
         return textFileRepository.save(textFileEntity).getId();

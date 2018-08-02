@@ -34,14 +34,14 @@ public interface TextFileRepository extends ExtendedCrudRepository<TextFileEntit
 
         List<EntityProperty> properties = new ArrayList<>();
 
-        if (Objects.equals(recent.getFileName(), current.getFileName())) {
+        if (!Objects.equals(recent.getFileName(), current.getFileName())) {
 
             properties.add(new EntityProperty<>("fileName", current.getFileName(), recent.getFileName()));
 
             recent.setFileName(current.getFileName());
         }
 
-        if (Objects.equals(recent.getContent(), current.getContent())) {
+        if (!Objects.equals(recent.getContent(), current.getContent())) {
 
             properties.add(new EntityProperty<>("content", current.getContent(), recent.getContent()));
 
