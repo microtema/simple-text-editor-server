@@ -8,13 +8,14 @@ import org.springframework.stereotype.Component;
 import static de.seven.fate.texteditor.constants.Constants.MAY_NOT_BE_NULL;
 
 @Component
-public class TextFile2TextFileEntityConverter implements ExtendedConverter<TextFile, TextFileEntity> {
+public class TextFile2TextFileEntityConverter implements DefaultConverter<TextFile, TextFileEntity> {
 
     @Override
     public void update(TextFile source, TextFileEntity target) {
         Validate.notNull(source, MAY_NOT_BE_NULL, "source");
         Validate.notNull(target, MAY_NOT_BE_NULL, "target");
 
+        target.setId(source.getId());
         target.setFileName(source.getFileName());
         target.setContent(source.getContent());
         target.setSize(source.getSize());

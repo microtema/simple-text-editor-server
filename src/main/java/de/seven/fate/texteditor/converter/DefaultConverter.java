@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public interface ExtendedConverter<S, T> extends Converter<S, T> {
+public interface DefaultConverter<S, T> extends Converter<S, T> {
 
     default T convert(S source) {
         Validate.notNull(source);
@@ -23,6 +23,25 @@ public interface ExtendedConverter<S, T> extends Converter<S, T> {
     }
 
     default void update(S source, T target) {
+
+    }
+
+    default void update(List<S> source, List<T> target) {
+        if (CollectionUtils.isEmpty(source)) {
+
+            return;
+        }
+
+        if (CollectionUtils.isEmpty(target)) {
+
+            return;
+        }
+
+        Validate.isTrue(source.size() == target.size(), "Size should be same");
+
+        for (int index = 0; index < source.size(); index++) {
+            update(source.get(index), target.get(index));
+        }
 
     }
 
