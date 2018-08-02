@@ -46,9 +46,6 @@ public class DefaultTextFileServiceTest {
     TextFileEntity entity;
 
     @Mock
-    List<TextFile> models;
-
-    @Mock
     List<TextFileEntity> entities;
 
     @Model
